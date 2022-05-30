@@ -2,7 +2,6 @@ package com.sebolivros.domain;
 
 public class Autor {
     private String nome;
-    private String idade;
 
     public String getNome() {
         return nome;
@@ -12,11 +11,4 @@ public class Autor {
         this.nome = nome;
     }
 
-    public String getIdade() {
-        return idade;
-    }
-
-    public void setIdade(String idade) {
-        this.idade = idade;
-    }
 }
