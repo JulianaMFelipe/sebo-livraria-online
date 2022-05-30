@@ -2,7 +2,7 @@ package com.sebolivros.domain;
 
 public class Livro {
     private Dono dono;
-    private String Nome;
+    private String nome;
     private Autor autor;
     private String genero;
     private String edicao;
@@ -25,11 +25,11 @@ public class Livro {
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
+        nome = nome;
     }
 
     public Autor getAutor() {

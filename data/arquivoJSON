@@ -1,0 +1,21 @@
+Exemplo JSON para body
+{
+   "nome": "alice no pais das maravilhas",
+   "autor": {
+       "nome": "Lewis Caroll",
+       "idade": "70"
+   },
+   "dono":{
+        "nome": "alexandre",
+        "idade": "22",
+        "cpf": "546456465",
+        "endereco":{
+            "logradouro": "rua paxeco",
+            "numero": "4556"
+        }
+    },
+   "usado": false,
+   "vender": true,
+   "doar": false,
+   "emprestar": false
+}
