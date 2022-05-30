@@ -29,7 +29,7 @@ public class Livro {
     }
 
     public void setNome(String nome) {
-        nome = nome;
+        this.nome = nome;
     }
 
     public Autor getAutor() {
