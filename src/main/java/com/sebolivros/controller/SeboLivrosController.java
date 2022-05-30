@@ -4,9 +4,12 @@ import com.sebolivros.domain.Livro;
 import com.sebolivros.service.SeboLivrosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class SeboLivrosController {
@@ -20,5 +23,13 @@ public class SeboLivrosController {
         service.cadastrarLivro(livro);
 
         return ResponseEntity.ok(livro);
+    }
+
+    @GetMapping("/recuperar-livros-cadastrados")
+    public ResponseEntity<List<Livro>> recuperarLivrosCadastrados(Livro livro){
+
+        var lista = service.recuperarLivrosCadastrados(livro);
+
+        return ResponseEntity.ok(lista);
     }
 }

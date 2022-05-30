@@ -2,20 +2,41 @@ Exemplo JSON para body
 {
    "nome": "alice no pais das maravilhas",
    "autor": {
-       "nome": "Lewis Caroll",
-       "idade": "70"
+       "nome": "Lewis Caroll"
    },
    "dono":{
         "nome": "alexandre",
+        "sobrenome": "Carlos Alberto",
+        "apelido": "Alex",
         "idade": "22",
         "cpf": "546456465",
+        "rg": "12345678",
+        "telefone": "1234567891",
+        "email": "alexandrecarlinhos@hotmail.com"
         "endereco":{
-            "logradouro": "rua paxeco",
-            "numero": "4556"
+            "pais": "Brasil"
+            "estado": "Goias"
+            "cidade": "Goiania"
+            "bairro": "Bueno"
+            "cep": "12345678"
+            "tipoLogradouro": "rua"
+            "logradouro": "t-9"
+            "numero": "1234"
+            "complemento": "predio 123"
+            "pontoDeReferencia": "em frente a praça 4"
+            "latitude": -123456789
+            "longitude": 12345678910
         }
     },
+   "genero": "fantastico",
+   "edicao": "primeira",
+   "editora": "darkside",
    "usado": false,
    "vender": true,
    "doar": false,
-   "emprestar": false
+   "emprestar": false,
+   "valor: 45.0,
+   "observacoes": "livro novo para revenda",
+   "sinopse": "Ainda garotinha, Alice Kingsleigh visitou um lugar mágico pela primeira vez e não tinha mais lembranças sobre o local a não ser em seus sonhos. Em uma festa da nobreza, a jovem vê um coelho branco. Alice o segue e cai em um buraco, indo parar em um mundo estranho: o País das Maravilhas. Lá, ela reencontra personagens que estavam guardados em sua memória através dos sonhos.",
+    "quantidade": 5
 }

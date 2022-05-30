@@ -1,5 +1,6 @@
 package com.sebolivros.service;
 
+import com.sebolivros.domain.Autor;
 import com.sebolivros.domain.Livro;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +14,10 @@ public class SeboLivrosService {
 
     public void cadastrarLivro(Livro livro){
         listaDeLivros.add(livro);
+    }
+
+    public List<Livro> recuperarLivrosCadastrados(Livro livro){
+
+            return listaDeLivros;
     }
 }
