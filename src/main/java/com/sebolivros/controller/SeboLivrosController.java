@@ -1,13 +1,12 @@
 package com.sebolivros.controller;
 
+import com.sebolivros.domain.Dono;
 import com.sebolivros.domain.Livro;
 import com.sebolivros.service.SeboLivrosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,10 +25,18 @@ public class SeboLivrosController {
     }
 
     @GetMapping("/recuperar-livros-cadastrados")
-    public ResponseEntity<List<Livro>> recuperarLivrosCadastrados(Livro livro){
+    public ResponseEntity<List<Livro>> recuperarLivrosCadastrados(Livro livro) {
 
         var lista = service.recuperarLivrosCadastrados(livro);
 
         return ResponseEntity.ok(lista);
+    }
+
+    @DeleteMapping("/deletar-livro-por-nome-e-dono")
+    public ResponseEntity<String> deletarLivroPorNomeEDono(@RequestHeader String nomeLivro, @RequestHeader String nomeDono) {
+
+        var retorno = service.deletarLivroPorNomeEDono(nomeLivro, nomeDono);
+
+        return ResponseEntity.ok(retorno);
     }
 }

@@ -12,12 +12,22 @@ public class SeboLivrosService {
 
     List<Livro> listaDeLivros = new ArrayList<>();
 
-    public void cadastrarLivro(Livro livro){
+    public void cadastrarLivro(Livro livro) {
         listaDeLivros.add(livro);
     }
 
-    public List<Livro> recuperarLivrosCadastrados(Livro livro){
+    public List<Livro> recuperarLivrosCadastrados(Livro livro) {
 
-            return listaDeLivros;
+        return listaDeLivros;
+    }
+
+    public String deletarLivroPorNomeEDono(String nomeLivro, String nomeDono) {
+        for (Livro livro : listaDeLivros) {
+            if (nomeLivro.equals(listaDeLivros.get(0).getNome()) && nomeDono.equals(listaDeLivros.get(0).getDono().getNome())) {
+                listaDeLivros.remove(0);
+                return "Livro Deletado com Sucesso";
+            }
+        }
+        return "Erro ao tentar deletar livro";
     }
 }

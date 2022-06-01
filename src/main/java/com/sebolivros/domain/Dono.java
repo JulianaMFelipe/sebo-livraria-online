@@ -4,7 +4,7 @@ public class Dono {
     private String nome;
     private String sobrenome;
     private String apelido;
-    private String idade;
+    private Integer idade;
     private Endereco endereco;
     private String cpf;
     private String rg;
@@ -36,11 +36,11 @@ public class Dono {
         this.apelido = apelido;
     }
 
-    public String getIdade() {
+    public Integer getIdade() {
         return idade;
     }
 
-    public void setIdade(String idade) {
+    public void setIdade(Integer idade) {
         this.idade = idade;
     }
 
