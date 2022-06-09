@@ -1,11 +1,9 @@
 package com.sebolivros.controller;
 
-import com.sebolivros.domain.Dono;
 import com.sebolivros.domain.Livro;
 import com.sebolivros.service.SeboLivrosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,6 +1,8 @@
 package com.sebolivros.domain;
 
 public class Dono {
+    private Integer idDono;
+    private Integer idLivro;
     private String nome;
     private String sobrenome;
     private String apelido;

@@ -25,7 +25,7 @@ public class SeboLivrosService {
         for (Livro livro : listaDeLivros) {
             if (nomeLivro.equals(listaDeLivros.get(0).getNome()) && nomeDono.equals(listaDeLivros.get(0).getDono().getNome())) {
                 listaDeLivros.remove(0);
-                return "Livro Deletado com Sucesso";
+                return "Livro deletado com sucesso";
             }
         }
         return "Erro ao tentar deletar livro";

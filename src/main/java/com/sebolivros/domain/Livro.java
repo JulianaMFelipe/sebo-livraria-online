@@ -1,6 +1,7 @@
 package com.sebolivros.domain;
 
 public class Livro {
+    private Integer idLivro;
     private Dono dono;
     private String nome;
     private Autor autor;

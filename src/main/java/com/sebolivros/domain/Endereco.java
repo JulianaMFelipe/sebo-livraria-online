@@ -1,6 +1,7 @@
 package com.sebolivros.domain;
 
 public class Endereco {
+    private Integer idDono;
     private String pais;
     private String estado;
     private String cidade;
@@ -11,8 +12,6 @@ public class Endereco {
     private String numero;
     private String complemento;
     private String pontoDeReferencia;
-    private double latitude;
-    private double longitude;
 
     public String getPais() {
         return pais;
@@ -94,19 +93,4 @@ public class Endereco {
         this.pontoDeReferencia = pontoDeReferencia;
     }
 
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
 }

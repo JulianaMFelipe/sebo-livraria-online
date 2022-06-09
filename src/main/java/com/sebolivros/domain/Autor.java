@@ -1,6 +1,7 @@
 package com.sebolivros.domain;
 
 public class Autor {
+    private Integer idLivro;
     private String nome;
 
     public String getNome() {
