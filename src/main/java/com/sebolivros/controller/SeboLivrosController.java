@@ -1,6 +1,6 @@
 package com.sebolivros.controller;
 
-import com.sebolivros.domain.Livro;
+import com.sebolivros.domain.LivroDomain;
 import com.sebolivros.service.SeboLivrosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ public class SeboLivrosController {
     private SeboLivrosService service;
 
     @PostMapping("/adicionar-livro")
-    public ResponseEntity<Livro> cadastraLivro(@RequestBody Livro livro) {
+    public ResponseEntity<LivroDomain> cadastraLivro(@RequestBody LivroDomain livro) {
 
         service.cadastrarLivro(livro);
 
@@ -23,7 +23,7 @@ public class SeboLivrosController {
     }
 
     @GetMapping("/recuperar-livros-cadastrados")
-    public ResponseEntity<List<Livro>> recuperarLivrosCadastrados(Livro livro) {
+    public ResponseEntity<List<LivroDomain>> recuperarLivrosCadastrados(LivroDomain livro) {
 
         var lista = service.recuperarLivrosCadastrados(livro);
 
