@@ -1,5 +1,7 @@
 package com.sebolivros.domain;
 
+import org.springframework.data.repository.cdi.Eager;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,8 +9,12 @@ import javax.persistence.*;
 public class EnderecoDomain {
 
     @Id
+    private String cep;
+
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idDono;
+
     @Column
     private String pais;
 
@@ -20,9 +26,6 @@ public class EnderecoDomain {
 
     @Column
     private String bairro;
-
-    @Column
-    private String cep;
 
     @Column
     private String tipoLogradouro;
@@ -38,6 +41,14 @@ public class EnderecoDomain {
 
     @Column
     private String pontoDeReferencia;
+
+    public Integer getIdDono() {
+        return idDono;
+    }
+
+    public void setIdDono(Integer idDono) {
+        this.idDono = idDono;
+    }
 
     public String getPais() {
         return pais;

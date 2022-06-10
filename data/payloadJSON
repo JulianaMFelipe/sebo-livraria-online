@@ -1,11 +1,16 @@
 Exemplo JSON para body
 {
    "nome": "alice no pais das maravilhas",
+   "idLivro": null,
    "autor": {
        "nome": "Lewis Caroll"
+       "idAutor": null,
+       "idLivro": null
    },
    "dono":{
         "nome": "alexandre",
+        "idDono": null,
+        "idDono": null,
         "sobrenome": "Carlos Alberto",
         "apelido": "Alex",
         "idade": "22",
@@ -14,18 +19,17 @@ Exemplo JSON para body
         "telefone": "1234567891",
         "email": "alexandrecarlinhos@hotmail.com"
         "endereco":{
-            "pais": "Brasil"
-            "estado": "Goias"
-            "cidade": "Goiania"
-            "bairro": "Bueno"
-            "cep": "12345678"
-            "tipoLogradouro": "rua"
-            "logradouro": "t-9"
-            "numero": "1234"
-            "complemento": "predio 123"
+            "idDono": null,
+            "pais": "Brasil",
+            "estado": "Goias",
+            "cidade": "Goiania",
+            "bairro": "Bueno",
+            "cep": "12345678",
+            "tipoLogradouro": "rua",
+            "logradouro": "t-9",
+            "numero": "1234",
+            "complemento": "predio 123",
             "pontoDeReferencia": "em frente a praça 4"
-            "latitude": -123456789
-            "longitude": 12345678910
         }
     },
    "genero": "fantastico",

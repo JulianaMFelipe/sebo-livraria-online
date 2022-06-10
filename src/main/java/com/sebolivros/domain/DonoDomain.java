@@ -41,6 +41,22 @@ public class DonoDomain {
     @Column
     private String email;
 
+    public Integer getIdDono() {
+        return idDono;
+    }
+
+    public void setIdDono(Integer idDono) {
+        this.idDono = idDono;
+    }
+
+    public Integer getIdLivro() {
+        return idLivro;
+    }
+
+    public void setIdLivro(Integer idLivro) {
+        this.idLivro = idLivro;
+    }
+
     public String getNome() {
         return nome;
     }

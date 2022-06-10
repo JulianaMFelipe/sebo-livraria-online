@@ -17,9 +17,6 @@ public class LivroDomain {
     private String nome;
 
     @Column
-    private AutorDomain autor;
-
-    @Column
     private String genero;
 
     @Column
@@ -52,6 +49,14 @@ public class LivroDomain {
     @Column
     private Integer quantidade;
 
+    public Integer getIdLivro() {
+        return idLivro;
+    }
+
+    public void setIdLivro(Integer idLivro) {
+        this.idLivro = idLivro;
+    }
+
     public DonoDomain getDono() {
         return dono;
     }
@@ -66,14 +71,6 @@ public class LivroDomain {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public AutorDomain getAutor() {
-        return autor;
-    }
-
-    public void setAutor(AutorDomain autor) {
-        this.autor = autor;
     }
 
     public String getGenero() {
