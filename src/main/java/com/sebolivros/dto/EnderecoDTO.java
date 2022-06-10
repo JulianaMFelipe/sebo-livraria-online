@@ -1,6 +1,6 @@
-package com.sebolivros.domain;
+package com.sebolivros.dto;
 
-public class Endereco {
+public class EnderecoDTO {
     private Integer idDono;
     private String pais;
     private String estado;

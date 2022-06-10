@@ -1,10 +1,13 @@
-package com.sebolivros.domain;
+package com.sebolivros.dto;
 
-public class Livro {
+import com.sebolivros.domain.AutorDomain;
+import com.sebolivros.domain.DonoDomain;
+
+public class LivroDTO {
     private Integer idLivro;
-    private Dono dono;
+    private DonoDomain dono;
     private String nome;
-    private Autor autor;
+    private AutorDomain autor;
     private String genero;
     private String edicao;
     private String editora;
@@ -17,11 +20,11 @@ public class Livro {
     private String observacoes;
     private Integer quantidade;
 
-    public Dono getDono() {
+    public DonoDomain getDono() {
         return dono;
     }
 
-    public void setDono(Dono dono) {
+    public void setDono(DonoDomain dono) {
         this.dono = dono;
     }
 
@@ -33,11 +36,11 @@ public class Livro {
         this.nome = nome;
     }
 
-    public Autor getAutor() {
+    public AutorDomain getAutor() {
         return autor;
     }
 
-    public void setAutor(Autor autor) {
+    public void setAutor(AutorDomain autor) {
         this.autor = autor;
     }
 

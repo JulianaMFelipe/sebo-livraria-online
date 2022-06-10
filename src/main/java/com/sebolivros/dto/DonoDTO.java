@@ -1,13 +1,15 @@
-package com.sebolivros.domain;
+package com.sebolivros.dto;
 
-public class Dono {
+import com.sebolivros.domain.EnderecoDomain;
+
+public class DonoDTO {
     private Integer idDono;
     private Integer idLivro;
     private String nome;
     private String sobrenome;
     private String apelido;
     private Integer idade;
-    private Endereco endereco;
+    private EnderecoDomain endereco;
     private String cpf;
     private String rg;
     private String telefone;
@@ -46,11 +48,11 @@ public class Dono {
         this.idade = idade;
     }
 
-    public Endereco getEndereco() {
+    public EnderecoDomain getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(EnderecoDomain endereco) {
         this.endereco = endereco;
     }
 

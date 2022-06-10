@@ -1,6 +1,6 @@
-package com.sebolivros.domain;
+package com.sebolivros.dto;
 
-public class Autor {
+public class AutorDTO {
     private Integer idLivro;
     private String nome;
 
