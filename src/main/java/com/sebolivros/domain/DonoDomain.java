@@ -1,44 +1,46 @@
 package com.sebolivros.domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "TbDonos")
+@Table(name = "tbdonos")
 public class DonoDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idDono;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    @JoinColumn(name = "tblivros")
     private Integer idLivro;
 
-    @Column
+    @Column(length = 130)
     private String nome;
 
-    @Column
+    @Column(length = 130)
     private String sobrenome;
 
-    @Column
+    @Column(length = 130)
     private String apelido;
 
     @Column
-    private Integer idade;
+    private LocalDate dataNascimento;
 
     @Column
+    @JoinColumn(name = "tbenderecos")
     private EnderecoDomain endereco;
 
-    @Column
+    @Column(length = 130)
     private String cpf;
 
-    @Column
+    @Column(length = 130)
     private String rg;
 
-    @Column
+    @Column(length = 130)
     private String telefone;
 
-    @Column
+    @Column(length = 130)
     private String email;
 
     public Integer getIdDono() {
@@ -81,12 +83,12 @@ public class DonoDomain {
         this.apelido = apelido;
     }
 
-    public Integer getIdade() {
-        return idade;
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setIdade(Integer idade) {
-        this.idade = idade;
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public EnderecoDomain getEndereco() {

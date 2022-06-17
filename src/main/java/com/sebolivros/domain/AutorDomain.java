@@ -3,7 +3,7 @@ package com.sebolivros.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TbAutores")
+@Table(name = "tbautores")
 public class AutorDomain {
 
     @Id
@@ -11,10 +11,10 @@ public class AutorDomain {
     private Integer idAutor;
 
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @JoinColumn(name = "tblivros")
     private Integer idLivro;
 
-    @Column
+    @Column(length = 130)
     private String nome;
 
     public Integer getIdAutor() {

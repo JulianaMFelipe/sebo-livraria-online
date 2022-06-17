@@ -1,45 +1,43 @@
 package com.sebolivros.domain;
 
-import org.springframework.data.repository.cdi.Eager;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TbEnderecos")
+@Table(name = "tbenderecos")
 public class EnderecoDomain {
 
     @Id
     private String cep;
 
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @JoinColumn(name = "tbautores")
     private Integer idDono;
 
-    @Column
+    @Column(length = 130)
     private String pais;
 
-    @Column
+    @Column(length = 130)
     private String estado;
 
-    @Column
+    @Column(length = 130)
     private String cidade;
 
-    @Column
+    @Column(length = 130)
     private String bairro;
 
-    @Column
+    @Column(length = 130)
     private String tipoLogradouro;
 
-    @Column
+    @Column(length = 130)
     private String logradouro;
 
-    @Column
+    @Column(length = 130)
     private String numero;
 
-    @Column
+    @Column(length = 130)
     private String complemento;
 
-    @Column
+    @Column(length = 130)
     private String pontoDeReferencia;
 
     public Integer getIdDono() {

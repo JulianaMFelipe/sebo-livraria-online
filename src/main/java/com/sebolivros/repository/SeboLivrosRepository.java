@@ -1,7 +1,7 @@
 package com.sebolivros.repository;
 
-import org.springframework.stereotype.Repository;
+import com.sebolivros.domain.LivroDomain;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class SeboLivrosRepository {
+public interface SeboLivrosRepository extends JpaRepository<LivroDomain, Integer> {
 }

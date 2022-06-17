@@ -20,6 +20,14 @@ public class LivroDTO {
     private String observacoes;
     private Integer quantidade;
 
+    public Integer getIdLivro() {
+        return idLivro;
+    }
+
+    public void setIdLivro(Integer idLivro) {
+        this.idLivro = idLivro;
+    }
+
     public DonoDomain getDono() {
         return dono;
     }

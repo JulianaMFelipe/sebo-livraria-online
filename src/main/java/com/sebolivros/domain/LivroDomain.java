@@ -3,7 +3,7 @@ package com.sebolivros.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TbLivros")
+@Table(name = "tblivros")
 public class LivroDomain {
 
     @Id
@@ -11,18 +11,23 @@ public class LivroDomain {
     private Integer idLivro;
 
     @Column
+    @JoinColumn(name = "tbdonos")
     private DonoDomain dono;
 
     @Column
+    @JoinColumn(name = "tbautores")
+    private AutorDomain autor;
+
+    @Column(length = 130)
     private String nome;
 
-    @Column
+    @Column(length = 130)
     private String genero;
 
-    @Column
+    @Column(length = 130)
     private String edicao;
 
-    @Column
+    @Column(length = 130)
     private String editora;
 
     @Column
@@ -37,17 +42,25 @@ public class LivroDomain {
     @Column
     private Boolean emprestar;
 
-    @Column
+    @Column(length = 130)
     private String sinopse;
 
     @Column
     private Double valor;
 
-    @Column
+    @Column(length = 130)
     private String observacoes;
 
     @Column
     private Integer quantidade;
+
+    public AutorDomain getAutor() {
+        return autor;
+    }
+
+    public void setAutor(AutorDomain autor) {
+        this.autor = autor;
+    }
 
     public Integer getIdLivro() {
         return idLivro;

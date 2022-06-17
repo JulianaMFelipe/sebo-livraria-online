@@ -1,40 +1,43 @@
 package com.sebolivros.controller;
 
-import com.sebolivros.domain.LivroDomain;
+import com.sebolivros.dto.LivroDTO;
 import com.sebolivros.service.SeboLivrosService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SeboLivrosController {
 
-    @Autowired
-    private SeboLivrosService service;
+    final SeboLivrosService service;
+
+    public SeboLivrosController(SeboLivrosService service) {
+        this.service = service;
+    }
 
     @PostMapping("/adicionar-livro")
-    public ResponseEntity<LivroDomain> cadastraLivro(@RequestBody LivroDomain livro) {
+    public ResponseEntity<Void> cadastraLivro(@RequestBody LivroDTO livro) {
 
         service.cadastrarLivro(livro);
 
-        return ResponseEntity.ok(livro);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping("/recuperar-livros-cadastrados")
-    public ResponseEntity<List<LivroDomain>> recuperarLivrosCadastrados(LivroDomain livro) {
+//    @GetMapping("/recuperar-livros-cadastrados")
+//    public ResponseEntity<List<LivroDomain>> recuperarLivrosCadastrados(LivroDomain livro) {
+//
+//        var lista = service.recuperarLivrosCadastrados(livro);
+//
+//        return ResponseEntity.ok(lista);
+//    }
 
-        var lista = service.recuperarLivrosCadastrados(livro);
-
-        return ResponseEntity.ok(lista);
-    }
-
-    @DeleteMapping("/deletar-livro-por-nome-e-dono")
-    public ResponseEntity<String> deletarLivroPorNomeEDono(@RequestHeader String nomeLivro, @RequestHeader String nomeDono) {
-
-        var retorno = service.deletarLivroPorNomeEDono(nomeLivro, nomeDono);
-
-        return ResponseEntity.ok(retorno);
-    }
+//    @DeleteMapping("/deletar-livro-por-nome-e-dono")
+//    public ResponseEntity<String> deletarLivroPorNomeEDono(@RequestHeader String nomeLivro, @RequestHeader String nomeDono) {
+//
+//        var retorno = service.deletarLivroPorNomeEDono(nomeLivro, nomeDono);
+//
+//        return ResponseEntity.ok(retorno);
+//    }
 }
