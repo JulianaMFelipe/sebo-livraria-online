@@ -2,9 +2,11 @@ package com.sebolivros.dto;
 
 import com.sebolivros.domain.EnderecoDomain;
 
+import java.util.List;
+
 public class DonoDTO {
     private Integer idDono;
-    private Integer idLivro;
+    private List<Integer> idLivro;
     private String nome;
     private String sobrenome;
     private String apelido;
@@ -15,6 +17,21 @@ public class DonoDTO {
     private String telefone;
     private String email;
 
+    public Integer getIdDono() {
+        return idDono;
+    }
+
+    public void setIdDono(Integer idDono) {
+        this.idDono = idDono;
+    }
+
+    public List<Integer> getIdLivro() {
+        return idLivro;
+    }
+
+    public void setIdLivro(List<Integer> idLivro) {
+        this.idLivro = idLivro;
+    }
 
     public String getNome() {
         return nome;

@@ -3,11 +3,13 @@ package com.sebolivros.dto;
 import com.sebolivros.domain.AutorDomain;
 import com.sebolivros.domain.DonoDomain;
 
+import java.util.List;
+
 public class LivroDTO {
     private Integer idLivro;
     private DonoDomain dono;
     private String nome;
-    private AutorDomain autor;
+    private List<AutorDomain> autor;
     private String genero;
     private String edicao;
     private String editora;
@@ -44,11 +46,11 @@ public class LivroDTO {
         this.nome = nome;
     }
 
-    public AutorDomain getAutor() {
+    public List<AutorDomain> getAutor() {
         return autor;
     }
 
-    public void setAutor(AutorDomain autor) {
+    public void setAutor(List<AutorDomain> autor) {
         this.autor = autor;
     }
 

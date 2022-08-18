@@ -1,22 +1,25 @@
 package com.sebolivros.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "tblivros")
+@Table(name = "tbLivros")
 public class LivroDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idLivro;
 
-    @Column
-    @JoinColumn(name = "tbdonos")
+    @ManyToOne
+    @JoinColumn(name = "dono")
     private DonoDomain dono;
 
-    @Column
-    @JoinColumn(name = "tbautores")
-    private AutorDomain autor;
+    @ManyToMany
+    @JoinTable(name = "tbLivroAutor",
+            joinColumns = @JoinColumn(name = "livros"),
+            inverseJoinColumns = @JoinColumn(name = "autores"))
+    private List<AutorDomain> autores;
 
     @Column(length = 130)
     private String nome;
@@ -54,12 +57,12 @@ public class LivroDomain {
     @Column
     private Integer quantidade;
 
-    public AutorDomain getAutor() {
-        return autor;
+    public List<AutorDomain> getAutor() {
+        return autores;
     }
 
-    public void setAutor(AutorDomain autor) {
-        this.autor = autor;
+    public void setAutor(List<AutorDomain> autores) {
+        this.autores = autores;
     }
 
     public Integer getIdLivro() {

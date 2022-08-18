@@ -2,18 +2,18 @@ package com.sebolivros.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
-@Table(name = "tbdonos")
+@Table(name = "tbDonos")
 public class DonoDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idDono;
 
-    @Column
-    @JoinColumn(name = "tblivros")
-    private Integer idLivro;
+    @OneToMany(mappedBy = "dono")
+    private List<LivroDomain> livros;
 
     @Column(length = 130)
     private String nome;
@@ -27,8 +27,8 @@ public class DonoDomain {
     @Column
     private LocalDate dataNascimento;
 
-    @Column
-    @JoinColumn(name = "tbenderecos")
+    @OneToOne
+    @JoinColumn(name = "endereco")
     private EnderecoDomain endereco;
 
     @Column(length = 130)
@@ -51,12 +51,12 @@ public class DonoDomain {
         this.idDono = idDono;
     }
 
-    public Integer getIdLivro() {
-        return idLivro;
+    public List<LivroDomain> getLivros() {
+        return livros;
     }
 
-    public void setIdLivro(Integer idLivro) {
-        this.idLivro = idLivro;
+    public void setLivros(List<LivroDomain> livros) {
+        this.livros = livros;
     }
 
     public String getNome() {

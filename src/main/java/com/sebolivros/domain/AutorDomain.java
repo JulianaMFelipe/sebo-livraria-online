@@ -1,18 +1,18 @@
 package com.sebolivros.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "tbautores")
+@Table(name = "tbAutores")
 public class AutorDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idAutor;
 
-    @Column
-    @JoinColumn(name = "tblivros")
-    private Integer idLivro;
+    @ManyToMany(mappedBy = "autores")
+    private List<LivroDomain> livros;
 
     @Column(length = 130)
     private String nome;
@@ -25,12 +25,12 @@ public class AutorDomain {
         this.idAutor = idAutor;
     }
 
-    public Integer getIdLivro() {
-        return idLivro;
+    public List<LivroDomain> getLivros() {
+        return livros;
     }
 
-    public void setIdLivro(Integer idLivro) {
-        this.idLivro = idLivro;
+    public void setLivros(List<LivroDomain> livros) {
+        this.livros = livros;
     }
 
     public String getNome() {

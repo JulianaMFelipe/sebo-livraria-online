@@ -3,15 +3,14 @@ package com.sebolivros.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbenderecos")
+@Table(name = "tbEnderecos")
 public class EnderecoDomain {
 
     @Id
     private String cep;
 
-    @Column
-    @JoinColumn(name = "tbautores")
-    private Integer idDono;
+    @OneToOne(mappedBy = "endereco")
+    private DonoDomain dono;
 
     @Column(length = 130)
     private String pais;
@@ -40,12 +39,12 @@ public class EnderecoDomain {
     @Column(length = 130)
     private String pontoDeReferencia;
 
-    public Integer getIdDono() {
-        return idDono;
+    public DonoDomain getDono() {
+        return dono;
     }
 
-    public void setIdDono(Integer idDono) {
-        this.idDono = idDono;
+    public void setDono(DonoDomain dono) {
+        this.dono = dono;
     }
 
     public String getPais() {

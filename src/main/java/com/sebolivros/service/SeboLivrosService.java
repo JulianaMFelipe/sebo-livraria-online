@@ -2,10 +2,11 @@ package com.sebolivros.service;
 
 import com.sebolivros.domain.LivroDomain;
 import com.sebolivros.dto.LivroDTO;
-import com.sebolivros.mapper.LivroMapper;
 import com.sebolivros.repository.SeboLivrosRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 @Service
 public class SeboLivrosService {
@@ -16,6 +17,7 @@ public class SeboLivrosService {
         this.repository = repository;
     }
 
+    @Transactional
     public void cadastrarLivro(LivroDTO livro) {
         LivroDomain domain = new LivroDomain();
         BeanUtils.copyProperties(livro, domain);
@@ -39,4 +41,5 @@ public class SeboLivrosService {
 //        }
 //        return "Erro ao tentar deletar livro";
 //    }
+
 }

@@ -1,8 +1,10 @@
 package com.sebolivros.dto;
 
+import java.util.List;
+
 public class AutorDTO {
     private Integer idAutor;
-    private Integer idLivro;
+    private List<Integer> idLivro;
     private String nome;
 
     public Integer getIdAutor() {
@@ -13,11 +15,11 @@ public class AutorDTO {
         this.idAutor = idAutor;
     }
 
-    public Integer getIdLivro() {
+    public List<Integer> getIdLivro() {
         return idLivro;
     }
 
-    public void setIdLivro(Integer idLivro) {
+    public void setIdLivro(List<Integer> idLivro) {
         this.idLivro = idLivro;
     }
 
